@@ -1,0 +1,10 @@
+.nav-link{
+  margin-right: 40px;
+  margin-left: 40px;
+}
+
+.active>.nav-link{
+  border-style: outset;
+  border-color: #2c2c2c;
+  border-width: 1px;
+}

@@ -1,0 +1,111 @@
+@import './variables';
+@import './mixins';
+
+h1{
+  font-family: Montserrat;
+  font-size: 33px;
+}
+
+
+
+.btn-white{
+  color: #ffffff;
+  background-color: transparent;
+  font-family: Montserrat;
+  font-size: 21px;
+  border: 1px;
+  padding:10px 30px;
+  margin-top: 20px;
+  margin-bottom: 100px;
+  border-style: solid;
+  border-color: #ffffff;
+}
+
+
+
+  h2{
+    font-size: 29px;
+    color: #2c2c2c;
+  }
+p{
+  font-family: Montserrat;
+  font-size: 16px;
+  color: #4e555c;
+}
+
+.imagen:hover {filter: grayscale(80%);}
+
+$bp: (
+  m: 640px,
+  l: 1024px
+);
+
+@for $i from 0 through 20 {
+  .cols-#{$i * 5}{
+    width: $i * 5%;
+  }
+}
+
+@media screen and (min-width: map_get($bp,m)) {
+  @for $i from 1 through 20 {
+    .cols-m-#{$i * 5}{
+      width: $i * 5%;
+    }
+  }
+}
+
+@media screen and (min-width: map_get($bp,l)) {
+  @for $i from 1 through 20 {
+    .cols-l-#{$i * 5}{
+      width: $i * 5%;
+    }
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.centrar{
+  text-align:center;
+}
+
+.btn{
+  font-family: Montserrat;
+  font-size: 21px;
+  border: 1px;
+  color: #2c2c2c;
+  padding:20px 50px 20px 50px;
+  margin-top: 100px;
+  margin-bottom: 100px;
+  border-style: solid;
+  border-color: #2c2c2c;
+}
+
+div {
+  font-family: Montserrat;
+  color: #4e555c;
+}
+.bg-gris{
+  background-color: #f4f4f4;
+}

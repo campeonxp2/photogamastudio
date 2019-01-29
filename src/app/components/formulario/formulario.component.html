@@ -1,0 +1,58 @@
+<script src="https://smtpjs.com/v3/smtp.js">
+</script>
+<form id="contact">
+  <div class="form">
+    <div class="col-md-12 mb-3">
+      <input type="text" class="form-control " id="form-name" placeholder="Nombre" required>
+
+    </div>
+    <div class="col-md-12 mb-3">
+      <input type="email" class="form-control " id="form-email" placeholder="Email" required>
+
+    </div>
+    <div class="col-md-12 mb-3">
+      <input type="text" class="form-control " id="form-subject" placeholder="Asunto" required>
+
+    </div>
+
+    <div class="col-md-12 mb-3">
+      <textarea class="form-control " id="form-message" rows="10" placeholder="Mensaje" required></textarea>
+
+    </div>
+  </div>
+  <button class="btn btn-primary col-md-6 mb-3" type="submit">ENVIAR MENSAJE</button>
+</form>
+
+
+<script>
+
+  const token = "573edc29-eb98-491b-904b-b832f61274fa";
+  const $formContact = document.querySelector("#contact");
+
+  const sendForm = event => {
+    event.preventDefault();
+    const message = {
+      name: document.querySelector("#form-name").value,
+      email: document.querySelector("#form-email").value,
+      subject: document.querySelector("#form-subject").value,
+      text: document.querySelector("#form-message").value
+    };
+    smtpJS(message);
+  };
+  const smtpJS = message => {
+    try {
+      Email.send(
+        "soporteweb@agenciaenwan.com",
+        "info@photogamastudio.com",
+        `${message.name} - ${message.email} - ${message.subject}\``,
+        message.text,
+        { token }
+      );
+    } catch (e) {
+      alert("Erro");
+    }
+  };
+
+  $formContact.addEventListener("submit", sendForm);
+
+</script>
